@@ -1,0 +1,230 @@
+-- OmniCal_Color_Settings.lua
+-- Скрипт для обработки пользовательских вводов в панели настроек цветов
+-- (Script for handling user inputs in the color settings panel)
+
+-- Отладка:
+    -- if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent() | HandleInputFontSizeEvent called with input: " .. tostring(input))
+    -- if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+    --     print("~~~~~~OCS: OmniCal_Color_Settings.lua initialized")
+    -- end
+
+function Initialize()
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: OmniCal_Color_Settings.lua initialized")
+    end
+end
+
+-- Функция для обработки ввода FontSizeEvent ~ (Function to handle FontSizeEvent input)
+function HandleInputFontSizeEvent()
+    -- Читаем введённое значение из временной переменной ~ (Read input value from temp variable)
+    local input = SKIN:GetVariable('TempInputFontSize', '')
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent() | HandleInputFontSizeEvent called with input: " .. tostring(input))
+    end
+    -- Преобразуем в число ~ (Convert to number)
+    local fontSize = tonumber(input)
+    
+    -- Валидация: размер шрифта должен быть целым числом от 6 до 20 ~ (Validation: font size must be integer between 6 and 20)
+    if not fontSize then
+        if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+            print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent() | ERROR: Invalid input - not a number")
+        end
+        return
+    end
+    
+    if fontSize < 6 or fontSize > 20 then
+        if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+            print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent() | ERROR: Font size out of range (6-20)")
+        end
+        return
+    end
+    
+    if math.floor(fontSize) ~= fontSize then
+        if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+            print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent() | ERROR: Font size must be an integer")
+        end
+        return
+    end
+    
+    -- Получаем путь к Variables.ini ~ (Get path to Variables.ini)
+    local variablesPath = SKIN:ReplaceVariables('#@#Variables.ini')
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent() | Writing FontSizeEvent=" .. fontSize .. " to " .. variablesPath)
+    end
+
+    -- Записываем в файл ~ (Write to file)
+    SKIN:Bang('!WriteKeyValue', 'Variables', 'FontSizeEvent', tostring(fontSize), '#@#Variables.ini')
+    
+    -- Обновляем переменную в текущем скине ~ (Update variable in current skin)
+    SKIN:Bang('!SetVariable', 'FontSizeEvent', tostring(fontSize))
+    
+    -- Обновляем отображение ~ (Update display)
+    SKIN:Bang('!UpdateMeter', 'FontSizeEvent_Input_Label')
+    SKIN:Bang('!Redraw')
+    
+    -- Обновляем переменную в основном скине ~ (Update variable in main skin)
+    SKIN:Bang('!SetVariable', 'FontSizeEvent', tostring(fontSize), 'GoogleCalendar')
+    
+    -- Перерендерим события через Lua ~ (Re-render events via Lua)
+    -- SKIN:Bang('!CommandMeasure', 'OmniCal_Events_Renderer_lua', 'Process()', 'GoogleCalendar')
+    -- выдает ошибку
+    -- все работает и без этого
+
+    
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent() | FontSizeEvent updated succesOCSully to: " .. fontSize)
+    end
+
+end
+
+-- Функция для обработки ввода FontSizeEvent_Faded ~ (Function to handle FontSizeEvent_Faded input)
+function HandleInputFontSizeEvent_Faded()
+    -- Читаем введённое значение из временной переменной ~ (Read input value from temp variable)
+    local input = SKIN:GetVariable('TempInputFontSizeFaded', '')
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent_Faded() | Called with input: " .. tostring(input))
+    end
+    
+    -- Преобразуем в число ~ (Convert to number)
+    local fontSize = tonumber(input)
+    
+    -- Валидация: размер шрифта должен быть целым числом от 6 до 20 ~ (Validation: font size must be integer between 6 and 20)
+    if not fontSize then
+        if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+            print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent_Faded() | ERROR: Invalid input - not a number")
+        end
+        return
+    end
+    
+    if fontSize < 6 or fontSize > 20 then
+        if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+            print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent_Faded() | ERROR: Font size out of range (6-20)")
+        end
+        return
+    end
+    
+    if math.floor(fontSize) ~= fontSize then
+        if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+            print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent_Faded() | ERROR: Font size must be an integer")
+        end
+        return
+    end
+    
+    -- Получаем путь к Variables.ini ~ (Get path to Variables.ini)
+    local variablesPath = SKIN:ReplaceVariables('#@#Variables.ini')
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent_Faded() | Writing FontSizeEvent_Faded=" .. fontSize .. " to " .. variablesPath)
+    end
+
+    -- Записываем в файл ~ (Write to file)
+    SKIN:Bang('!WriteKeyValue', 'Variables', 'FontSizeEvent_Faded', tostring(fontSize), '#@#Variables.ini')
+    
+    -- Обновляем переменную в текущем скине ~ (Update variable in current skin)
+    SKIN:Bang('!SetVariable', 'FontSizeEvent_Faded', tostring(fontSize))
+    
+    -- Обновляем отображение ~ (Update display)
+    SKIN:Bang('!UpdateMeter', 'FontSizeEventFaded_Input_Label')
+    SKIN:Bang('!Redraw')
+    
+    -- Обновляем переменную в основном скине ~ (Update variable in main skin)
+    SKIN:Bang('!SetVariable', 'FontSizeEvent_Faded', tostring(fontSize), 'GoogleCalendar')
+    
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: OmniCal_Color_Settings.lua | HandleInputFontSizeEvent_Faded() | FontSizeEvent_Faded updated successfully to: " .. fontSize)
+    end
+
+end
+
+
+    -- Группа: [ Настройки скина / Календари ]
+    -- Функция для переключения применения встроенного цвета события для Календаря 1 (Toggle embedded event color for Calendar 1)
+    function Toggle_ApplyEmbeddedBGcolorCal_1()
+        local currentValue = SKIN:GetVariable('applyEmbeddedBGcolorCal_1') or '0'
+        local newValue = (currentValue == '1') and '0' or '1'
+        
+        -- Записать новое значение в файл Variables.ini (Write new value to Variables.ini)
+        SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_1 "' .. newValue .. '" "#@#Variables.ini"')
+        
+        -- Обновить переменную (Update runtime variable)
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_1 "' .. newValue .. '"')
+
+        -- Обновить изображение кнопки в панели настроек цвета (Update button image in color settings panel)
+        SKIN:Bang('!SetOption EventButton_1 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
+        SKIN:Bang('!UpdateMeter EventButton_1')
+
+        -- Обновить время последнего действия (Update last action time)
+        LastActionTime = os.time()
+        
+        -- Обновить события для применения изменений (Update events to apply changes)
+        pcall(UpdateDay)
+        
+        -- Обновить маркеры в режиме настроек (Update settings markers)
+        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
+        
+        -- Перерисовать скин (Redraw skin)
+        SKIN:Bang('!Redraw')
+    end
+
+    -- Функция для переключения применения встроенного цвета события для Календаря 2 (Toggle embedded event color for Calendar 2)
+    function Toggle_ApplyEmbeddedBGcolorCal_2()
+        local currentValue = SKIN:GetVariable('applyEmbeddedBGcolorCal_2') or '0'
+        local newValue = (currentValue == '1') and '0' or '1'
+        
+        SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_2 "' .. newValue .. '" "#@#Variables.ini"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_2 "' .. newValue .. '"')
+        SKIN:Bang('!SetOption EventButton_2 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
+        SKIN:Bang('!UpdateMeter EventButton_2')
+        
+        LastActionTime = os.time()
+        pcall(UpdateDay)
+        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
+        SKIN:Bang('!Redraw')
+    end
+
+    -- Функция для переключения применения встроенного цвета события для Календаря 3 (Toggle embedded event color for Calendar 3)
+    function Toggle_ApplyEmbeddedBGcolorCal_3()
+        local currentValue = SKIN:GetVariable('applyEmbeddedBGcolorCal_3') or '0'
+        local newValue = (currentValue == '1') and '0' or '1'
+        
+        SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_3 "' .. newValue .. '" "#@#Variables.ini"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_3 "' .. newValue .. '"')
+        SKIN:Bang('!SetOption EventButton_3 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
+        SKIN:Bang('!UpdateMeter EventButton_3')
+        
+        LastActionTime = os.time()
+        pcall(UpdateDay)
+        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
+        SKIN:Bang('!Redraw')
+    end
+
+    -- Функция для переключения применения встроенного цвета события для Календаря 4 (Toggle embedded event color for Calendar 4)
+    function Toggle_ApplyEmbeddedBGcolorCal_4()
+        local currentValue = SKIN:GetVariable('applyEmbeddedBGcolorCal_4') or '0'
+        local newValue = (currentValue == '1') and '0' or '1'
+        
+        SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_4 "' .. newValue .. '" "#@#Variables.ini"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_4 "' .. newValue .. '"')
+        SKIN:Bang('!SetOption EventButton_4 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
+        SKIN:Bang('!UpdateMeter EventButton_4')
+        
+        LastActionTime = os.time()
+        pcall(UpdateDay)
+        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
+        SKIN:Bang('!Redraw')
+    end
+
+    -- Функция для переключения применения встроенного цвета события для Календаря 5 (Toggle embedded event color for Calendar 5)
+    function Toggle_ApplyEmbeddedBGcolorCal_5()
+        local currentValue = SKIN:GetVariable('applyEmbeddedBGcolorCal_5') or '0'
+        local newValue = (currentValue == '1') and '0' or '1'
+        
+        SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_5 "' .. newValue .. '" "#@#Variables.ini"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_5 "' .. newValue .. '"')
+        SKIN:Bang('!SetOption EventButton_5 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
+        SKIN:Bang('!UpdateMeter EventButton_5')
+        
+        LastActionTime = os.time()
+        pcall(UpdateDay)
+        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
+        SKIN:Bang('!Redraw')
+    end
