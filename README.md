@@ -26,7 +26,8 @@
 ## 📸 Скриншоты
 
 <img width="505" height="710" alt="OmniCal_1" src="https://github.com/user-attachments/assets/5ef11da7-9fa9-4bc6-b057-eba60b85c7a9" />
-<img width="505" height="710" alt="OmniCal_2" src="https://github.com/user-attachments/assets/dea8d969-df02-4cd9-90e4-6ba95a290f63" />
+<img width="505" height="710" alt="OmniCal_2" src="https://github.com/user-attachments/assets/13ce7576-c1bc-4c2a-9d68-44ca8b3bb786" />
+<img width="740" height="750" alt="OmniCal_3" src="https://github.com/user-attachments/assets/31d81529-916a-4999-9168-fb90297b473a" />
 
 
 ---
