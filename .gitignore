@@ -1,0 +1,32 @@
+# Чувствительные данные (Sensitive data)
+# НЕ коммитить файл с API ключами и токенами (DO NOT commit file with API keys and tokens)
+@Resources/Variables_URL.ini
+
+# Дебаг файлы (Debug files)
+@Resources/Debug/
+*.log
+
+# Временные файлы Rainmeter (Rainmeter temporary files)
+*.bak
+*~
+
+# Резервные копии (Backups)
+*_back.ini
+*_backup.ini
+
+# Системные файлы Windows (Windows system files)
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Файлы редакторов (Editor files)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled files
+*.pyc
+*.pyo
+__pycache__/
