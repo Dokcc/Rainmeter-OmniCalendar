@@ -2,7 +2,7 @@
 ;------------------------
 ;   INITIALIZE COLORS
 ;------------------------
-RGBA=130,130,130,255
+RGBA=50,70,86,100
 R=0
 G=0
 B=0
@@ -17,7 +17,7 @@ HexColor=#DD6B3A
 ;------------------------
 Version=1.0.1
 ColorThemePath=#ROOTCONFIGPATH#/@Resources/Variables_Theme_Dark.ini
-CSN=#ColorTtmeTxt#
+CSN=#Cal_1_Bg_Faded#
 OldColor=0,150,255,255
 IBG=29,29,29,255
 IBO=150,150,150,255
