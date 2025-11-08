@@ -6,6 +6,9 @@
 @Resources/Debug/
 *.log
 
+# TODO и временные заметки (TODO and temporary notes)
+@Resources/_ToDo/
+
 # Временные файлы Rainmeter (Rainmeter temporary files)
 *.bak
 *~
