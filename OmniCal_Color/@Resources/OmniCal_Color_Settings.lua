@@ -145,21 +145,21 @@ end
         -- Записать новое значение в файл Variables.ini (Write new value to Variables.ini)
         SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_1 "' .. newValue .. '" "#@#Variables.ini"')
         
-        -- Обновить переменную (Update runtime variable)
+        -- Обновить переменную в текущем скине (Update variable in current skin)
         SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_1 "' .. newValue .. '"')
+        
+        -- Обновить переменную в основном скине (Update variable in main skin)
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_1 "' .. newValue .. '" GoogleCalendar')
 
         -- Обновить изображение кнопки в панели настроек цвета (Update button image in color settings panel)
         SKIN:Bang('!SetOption EventButton_1 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
         SKIN:Bang('!UpdateMeter EventButton_1')
 
+        -- Перерендерить события для применения изменений (Re-render events to apply changes)
+        SKIN:Bang('!CommandMeasure OmniCal_Events_lua "MeterGroup()" GoogleCalendar')
+        
         -- Обновить время последнего действия (Update last action time)
         LastActionTime = os.time()
-        
-        -- Обновить события для применения изменений (Update events to apply changes)
-        pcall(UpdateDay)
-        
-        -- Обновить маркеры в режиме настроек (Update settings markers)
-        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
         
         -- Перерисовать скин (Redraw skin)
         SKIN:Bang('!Redraw')
@@ -172,12 +172,12 @@ end
         
         SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_2 "' .. newValue .. '" "#@#Variables.ini"')
         SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_2 "' .. newValue .. '"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_2 "' .. newValue .. '" GoogleCalendar')
         SKIN:Bang('!SetOption EventButton_2 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
         SKIN:Bang('!UpdateMeter EventButton_2')
         
+        SKIN:Bang('!CommandMeasure OmniCal_Events_lua "MeterGroup()" GoogleCalendar')
         LastActionTime = os.time()
-        pcall(UpdateDay)
-        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
         SKIN:Bang('!Redraw')
     end
 
@@ -188,12 +188,12 @@ end
         
         SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_3 "' .. newValue .. '" "#@#Variables.ini"')
         SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_3 "' .. newValue .. '"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_3 "' .. newValue .. '" GoogleCalendar')
         SKIN:Bang('!SetOption EventButton_3 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
         SKIN:Bang('!UpdateMeter EventButton_3')
         
+        SKIN:Bang('!CommandMeasure OmniCal_Events_lua "MeterGroup()" GoogleCalendar')
         LastActionTime = os.time()
-        pcall(UpdateDay)
-        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
         SKIN:Bang('!Redraw')
     end
 
@@ -204,12 +204,12 @@ end
         
         SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_4 "' .. newValue .. '" "#@#Variables.ini"')
         SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_4 "' .. newValue .. '"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_4 "' .. newValue .. '" GoogleCalendar')
         SKIN:Bang('!SetOption EventButton_4 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
         SKIN:Bang('!UpdateMeter EventButton_4')
         
+        SKIN:Bang('!CommandMeasure OmniCal_Events_lua "MeterGroup()" GoogleCalendar')
         LastActionTime = os.time()
-        pcall(UpdateDay)
-        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
         SKIN:Bang('!Redraw')
     end
 
@@ -220,11 +220,11 @@ end
         
         SKIN:Bang('!WriteKeyValue Variables applyEmbeddedBGcolorCal_5 "' .. newValue .. '" "#@#Variables.ini"')
         SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_5 "' .. newValue .. '"')
+        SKIN:Bang('!SetVariable applyEmbeddedBGcolorCal_5 "' .. newValue .. '" GoogleCalendar')
         SKIN:Bang('!SetOption EventButton_5 ButtonImage "#@#Images\\\\switch_' .. newValue .. '.png"')
         SKIN:Bang('!UpdateMeter EventButton_5')
         
+        SKIN:Bang('!CommandMeasure OmniCal_Events_lua "MeterGroup()" GoogleCalendar')
         LastActionTime = os.time()
-        pcall(UpdateDay)
-        if UpdateSettingsMarkers then pcall(UpdateSettingsMarkers) end
         SKIN:Bang('!Redraw')
     end
