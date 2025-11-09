@@ -2,7 +2,7 @@
 ;------------------------
 ;   INITIALIZE COLORS
 ;------------------------
-RGBA=28,28,28,200
+RGBA=171,51,51,255
 R=0
 G=0
 B=0
@@ -11,14 +11,14 @@ H=0
 S=0
 V=0
 HexColor=#DD6B3A
-ColorTooltip=Цвет для Зона времени 1
+ColorTooltip=Основной фон скина
 
 ;------------------------
 ;     SKIN SETTINGS
 ;------------------------
 Version=1.0.1
 ColorThemePath=#ROOTCONFIGPATH#/@Resources/Variables_Theme_Dark.ini
-CSN=#ColorDay#
+CSN=#ColorBg#
 OldColor=0,150,255,255
 IBG=48,48,48,255
 IBO=110,110,110,255
