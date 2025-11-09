@@ -83,7 +83,7 @@ function GetColorFromThemeFile(variableName)
 end
 
 -- Универсальная функция для запуска с любой переменной
-function StartWith(variableName)
+function StartWith(variableName, tooltipText)
     -- Проверяем, что передано имя переменной
     if not variableName or variableName == "" then
         print("Error: Variable name not provided to StartWith()")
@@ -92,6 +92,16 @@ function StartWith(variableName)
 
     -- Получаем значение переменной из файла темы, а не из текущего скина
     local initialColor = GetColorFromThemeFile(variableName)
+
+    -- Сохраняем текст подсказки в переменную ColorSelector (Saving tooltip text to ColorSelector variable)
+    if tooltipText and tooltipText ~= "" then
+        SKIN:Bang('!WriteKeyValue', 'Variables', 'ColorTooltip', tooltipText, '#ROOTCONFIGPATH#\\ColorSelector\\@Resources\\ColorSelectorVariables.inc')
+        print("Tooltip text saved: " .. tooltipText)
+    else
+        -- Если подсказка не передана, сохраняем имя переменной (If no tooltip provided, save variable name)
+        SKIN:Bang('!WriteKeyValue', 'Variables', 'ColorTooltip', variableName, '#ROOTCONFIGPATH#\\ColorSelector\\@Resources\\ColorSelectorVariables.inc')
+        print("No tooltip provided, using variable name: " .. variableName)
+    end
 
     -- Запускаем ColorSelector с полученными параметрами
     StartColorSelector(variableName, initialColor)

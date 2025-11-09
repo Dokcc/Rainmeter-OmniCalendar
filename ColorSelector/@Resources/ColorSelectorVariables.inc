@@ -2,7 +2,7 @@
 ;------------------------
 ;   INITIALIZE COLORS
 ;------------------------
-RGBA=33,150,243,100
+RGBA=28,28,28,200
 R=0
 G=0
 B=0
@@ -11,16 +11,17 @@ H=0
 S=0
 V=0
 HexColor=#DD6B3A
+ColorTooltip=÷вет дл€ «она времени 1
 
 ;------------------------
 ;     SKIN SETTINGS
 ;------------------------
 Version=1.0.1
 ColorThemePath=#ROOTCONFIGPATH#/@Resources/Variables_Theme_Dark.ini
-CSN=#Cal_2_Bg#
+CSN=#ColorDay#
 OldColor=0,150,255,255
-IBG=29,29,29,255
-IBO=150,150,150,255
+IBG=48,48,48,255
+IBO=110,110,110,255
 INVA=200,90,90,255
 CO=190,190,190
 Active=1
