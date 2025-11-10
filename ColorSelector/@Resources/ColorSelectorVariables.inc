@@ -2,7 +2,7 @@
 ;------------------------
 ;   INITIALIZE COLORS
 ;------------------------
-RGBA=33,150,243,100
+RGBA=50,70,86,100
 R=0
 G=0
 B=0
@@ -11,14 +11,14 @@ H=0
 S=0
 V=0
 HexColor=#DD6B3A
-ColorTooltip=Цвет фона События для 2-го календаря
+ColorTooltip=Прошедшее Событие: Цвет фона <|> Цвет текста для 1-го календаря
 
 ;------------------------
 ;     SKIN SETTINGS
 ;------------------------
 Version=1.0.1
 ColorThemePath=#ROOTCONFIGPATH#/@Resources/Variables_Theme_Dark.ini
-CSN=#Cal_2_Bg#
+CSN=#Cal_1_Bg_Faded#
 OldColor=0,150,255,255
 IBG=48,48,48,255
 IBO=110,110,110,255
