@@ -228,3 +228,27 @@ end
         LastActionTime = os.time()
         SKIN:Bang('!Redraw')
     end
+
+    
+-- Группа: [ Настройки скина / Тема ]
+-- Функция для переключения темы из панели настроек цвета (Toggle theme from color settings panel)
+function Toggle_Theme_FromColorSettings()
+    -- Получить текущее значение темы (Get current theme value)
+    local currentTheme = SKIN:GetVariable('Theme', 'Dark')
+    
+    -- Переключить на противоположное значение (Toggle to opposite value)
+    local newTheme = (currentTheme == 'Dark') and 'Light' or 'Dark'
+    
+    -- Записать новое значение в Variables.ini (Write new value to Variables.ini)
+    SKIN:Bang('!WriteKeyValue', 'Variables', 'Theme', newTheme, '#@#Variables.ini')
+    
+    -- Обновить переменную в текущем скине (Update variable in current skin)
+    SKIN:Bang('!SetVariable', 'Theme', newTheme)
+    
+    -- Обновить переменную в основном скине (Update variable in main skin)
+    SKIN:Bang('!SetVariable', 'Theme', newTheme, 'GoogleCalendar')
+    
+    if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
+        print("~~~~~~OCS: Theme switched from " .. currentTheme .. " to " .. newTheme)
+    end
+end
