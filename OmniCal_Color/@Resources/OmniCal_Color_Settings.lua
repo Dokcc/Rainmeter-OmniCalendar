@@ -248,6 +248,12 @@ function Toggle_Theme_FromColorSettings()
     -- Обновить переменную в основном скине (Update variable in main skin)
     SKIN:Bang('!SetVariable', 'Theme', newTheme, 'GoogleCalendar')
     
+    -- Обновить отображение темы в панели (Update theme display in panel)
+    SKIN:Bang('!UpdateMeter', 'Theme_mode')
+    
+    -- Перезагрузить панель настроек цвета для применения новой темы (Refresh color settings panel to apply new theme)
+    SKIN:Bang('!Refresh')
+    
     if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
         print("~~~~~~OCS: Theme switched from " .. currentTheme .. " to " .. newTheme)
     end
