@@ -2,7 +2,7 @@
 ;------------------------
 ;   INITIALIZE COLORS
 ;------------------------
-RGBA=25,32,48,100
+RGBA=50,100,100,100
 R=0
 G=0
 B=0
@@ -18,7 +18,7 @@ ColorTooltip=÷вет дл€ «она времени 3
 ;------------------------
 Version=1.0.1
 ColorThemePath=#ROOTCONFIGPATH#/@Resources/Variables_Theme_Dark.ini
-CSN=#ColorDay3#
+CSN=#ColorTimeZone_3#
 OldColor=0,150,255,255
 IBG=48,48,48,255
 IBO=110,110,110,255

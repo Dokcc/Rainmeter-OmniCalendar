@@ -270,7 +270,7 @@ function ApplyLivePreviewColor()
     SKIN:Bang('!Redraw', '#ROOTCONFIG#')
     SKIN:Bang('!Redraw', '#ROOTCONFIG#\\OmniCal_Color')
 
-    -- Специальная обработка для ColorTtmeTxt, ColorBg, ColorDay, ColorDay2, ColorDay3: обновляем соответствующие метры
+    -- Специальная обработка для ColorTtmeTxt, ColorBg, ColorTimeZone_1, ColorTimeZone_2, ColorTimeZone_3: обновляем соответствующие метры
     -- Почему: В OmniCal_Skin.lua и OmniCal.ini статические установки переопределяют DynamicVariables, блокируя Live Preview.
     -- Зачем: ColorSelector должен явно синхронизировать цвета через Bang для Live Preview.
     -- Как: Обновляем все метры от Time_00 до Time_48 (максимум возможных метров времени, включая психологический режим).
@@ -283,8 +283,8 @@ function ApplyLivePreviewColor()
         end
         SKIN:Bang('!Redraw', '#ROOTCONFIG#')
     end
-    -- ColorBg, ColorDay, ColorDay2, ColorDay3 обновляются автоматически через DynamicVariables, т.к. Shape использует переменные для координат и цветов
-    -- (ColorBg, ColorDay, ColorDay2, ColorDay3 update automatically via DynamicVariables, as Shape uses variables for coordinates and colors)
+    -- ColorBg, ColorTimeZone_1, ColorTimeZone_2, ColorTimeZone_3 обновляются автоматически через DynamicVariables, т.к. Shape использует переменные для координат и цветов
+    -- (ColorBg, ColorTimeZone_1, ColorTimeZone_2, ColorTimeZone_3 update automatically via DynamicVariables, as Shape uses variables for coordinates and colors)
 
     print("Live Preview applied: " .. varName .. " = " .. rgba)
 end

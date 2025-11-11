@@ -64,14 +64,14 @@
 
 ```ini
 ; Цвета зон времени (TimeZone colors)
-ColorDayN=60,40,70,40
+ColorTimeZone_1N=60,40,70,40
 ```
 
 ##### В Variables_Theme_Light.ini
 
 ```ini
 ; Цвета зон времени (TimeZone colors)
-ColorDayN=240,230,250,80
+ColorTimeZone_1N=240,230,250,80
 ```
 
 ### Изменения в .ini файле скина
@@ -168,7 +168,7 @@ Y=0
 W=#LineWidth#
 H=1
 DynamicVariables=1
-Shape=Rectangle 0,0,#LineWidth#,1 | Fill Color #ColorDayN# | StrokeWidth 0
+Shape=Rectangle 0,0,#LineWidth#,1 | Fill Color #ColorTimeZone_1N# | StrokeWidth 0
 ```
 
 ## ОТОБРАЖЕНИЕ
@@ -195,7 +195,7 @@ if dayStartMinN and dayEndMinN then
         local yN = yStartN
         local heightN = yEndN - yStartN
         if heightN > 0 then
-            local fillN = SKIN:GetVariable('ColorDayN') or '64,105,99,75'
+            local fillN = SKIN:GetVariable('ColorTimeZone_1N') or '64,105,99,75'
             local shapeN = string.format('Rectangle %d,%d,%d,%d | Fill Color %s| StrokeWidth 1 | Stroke Color %s', leftMargin, yN, lineWidth, heightN, fillN, fillN)
             SKIN:Bang('!SetOption', 'MeterDayBgN', 'Shape', shapeN)
             SKIN:Bang('!SetOption', 'MeterDayBgN', 'Hidden', '0')
@@ -512,7 +512,7 @@ end
 ## Примечания
 
 - Обязательно следуйте формату комментариев: -- коментарий по-русски (Comment in English)
-- Имена переменных цветов для фона: `ColorDayN` (а не TimeZone_N_Color) - это важное отличие от документации
+- Имена переменных цветов для фона: `ColorTimeZone_1N` (а не TimeZone_N_Color) - это важное отличие от документации
 - При добавлении нескольких временных зон, убедитесь, что Y-координаты элементов правильно рассчитываются (обычно +25r от предыдущего элемента)
 - В обработчиках ввода (`HandleInputTimeZoneNStart/End`) используется валидация по Y-координатам, а не по числовым значениям часов
 - Функция проверки валидности учитывает существование метки времени `Time_##` и использует `GetYForTime()` для проверки границ

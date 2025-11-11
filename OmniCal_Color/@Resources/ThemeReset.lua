@@ -47,9 +47,9 @@ local DEFAULT_THEME_DARK = [[; Variables_Theme_Dark.ini
 
 ;—— ФОН ДЛЯ ДНЕВНОГО ВРЕМЕНИ В СУТКАХ (Background for daytime hours) ———————————————————————————————
     ; Цвет фона для дневного времени в сутках (Background color for daytime hours):
-    ColorDay=28,28,28,200
-    ColorDay2=33,37,38,255
-    ColorDay3=25,32,48,100
+    ColorTimeZone_1=28,28,28,200
+    ColorTimeZone_2=33,37,38,255
+    ColorTimeZone_3=25,32,48,100
     
 
 ;—— Линия текущего времени (Current time line) —————————————————————————————————————————————————————
@@ -142,7 +142,7 @@ local DEFAULT_THEME_DARK = [[; Variables_Theme_Dark.ini
     SettingsFontColorOn=150,150,150,200
     ; Цвет кнопки Настройки при включенном режиме настройки (Color of the Settings button when Settings mode is on):
     SettingsOnFontColorOff=0,120,212,150
-    SettingsOnFontColorOn=0,120,212,255
+    SettingsOnFontColorOn=0,117,207
 
     ; Цвет текста всплывающей подсказки при наведении на кнопку настроек (Tooltip text color when hovering over settings button):
     SettingsTxtFontColor=200,200,200,255
@@ -163,6 +163,8 @@ local DEFAULT_THEME_DARK = [[; Variables_Theme_Dark.ini
 ;—— ОКНО ВВОДА (Input window) —————————————————————————————————————————————————————————————————————
     ; Цвет текста окна ввода (для режима Настройки) (Text color of the input window (for Settings mode)):
     ColorInputTxt=200,200,200,255
+    ; Цвет фона ввода при включенном режиме настройки (Input background color when Settings mode is on):
+    SettingsInputBGColor=25,25,25,255
 
 ;—— ЦВЕТА ДЛЯ РЕЖИМА НАСТРОЕК (Colors for Settings mode) ————————————————————————————————————————
     ; Цвет текста настраиваемых параметров для режима настройки (Text color for Settings mode):
@@ -174,6 +176,7 @@ local DEFAULT_THEME_DARK = [[; Variables_Theme_Dark.ini
 ;—— ЦВЕТА ПАНЕЛИ НАСТРОЙКИ ТЕМЫ (Colors Settings Theme Panel) —————————————————————————————————————————————
     ;ColorSettingsPanelBG=45,45,45,255
     OmniCal_Color_Setings_FontColor=200,200,200,255
+
 ]]
 
 -- Дефолтная светлая тема (Default Light Theme)
@@ -218,9 +221,9 @@ local DEFAULT_THEME_LIGHT = [[; Variables_Theme_Light.ini
 
 ;—— ФОН ДЛЯ ДНЕВНОГО ВРЕМЕНИ В СУТКАХ (Background for daytime hours) ———————————————————————————————
     ; Цвет фона для дневного времени в сутках (Background color for daytime hours):
-    ColorDay=210,210,210,255
-    ColorDay2=73,117,128,21
-    ColorDay3=50,100,100,100
+    ColorTimeZone_1=210,210,210,255
+    ColorTimeZone_2=73,117,128,21
+    ColorTimeZone_3=50,100,100,100
     
 ;—— Линия текущего времени (Current time line) —————————————————————————————————————————————————————
     ; Цвет линии текущего времени (Color of the current time line):
@@ -328,7 +331,9 @@ local DEFAULT_THEME_LIGHT = [[; Variables_Theme_Light.ini
 ;—— ОКНО ВВОДА (Input window) —————————————————————————————————————————————————————————————————————
     ; Цвет текста окна ввода (для режима Настройки) (Text color of the input window (for Settings mode)):
     ColorInputTxt=30,30,30,255
-
+    ; Цвет фона ввода при включенном режиме настройки (Input background color when Settings mode is on):
+    SettingsInputBGColor=35,35,35,255
+    
 ;—— ЦВЕТА ДЛЯ РЕЖИМА НАСТРОЕК (Colors for Settings mode) ————————————————————————————————————————
     ; Цвет текста настраиваемых параметров для режима настройки (Text color for Settings mode):
     DayStartColor=#SettingsOnFontColorOn#
@@ -339,6 +344,7 @@ local DEFAULT_THEME_LIGHT = [[; Variables_Theme_Light.ini
 ;—— ЦВЕТА ПАНЕЛИ НАСТРОЙКИ ТЕМЫ (Colors Settings Theme Panel) —————————————————————————————————————————————
     ;ColorSettingsPanelBG=45,45,45,255
     OmniCal_Color_Setings_FontColor=200,200,200,255
+
 ]]
 
 -- Функция для полной замены содержимого INI-файла (Function to completely replace INI file content)
