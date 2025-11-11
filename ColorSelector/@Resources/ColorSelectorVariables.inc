@@ -2,7 +2,7 @@
 ;------------------------
 ;   INITIALIZE COLORS
 ;------------------------
-RGBA=50,70,86,100
+RGBA=25,32,48,100
 R=0
 G=0
 B=0
@@ -11,14 +11,14 @@ H=0
 S=0
 V=0
 HexColor=#DD6B3A
-ColorTooltip=Прошедшее Событие: Цвет фона <|> Цвет текста для 1-го календаря
+ColorTooltip=Цвет для Зона времени 3
 
 ;------------------------
 ;     SKIN SETTINGS
 ;------------------------
 Version=1.0.1
 ColorThemePath=#ROOTCONFIGPATH#/@Resources/Variables_Theme_Dark.ini
-CSN=#Cal_1_Bg_Faded#
+CSN=#ColorDay3#
 OldColor=0,150,255,255
 IBG=48,48,48,255
 IBO=110,110,110,255

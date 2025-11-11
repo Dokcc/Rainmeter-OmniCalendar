@@ -12,6 +12,10 @@ function Initialize()
     if tonumber(SKIN:GetVariable('DebugMode_ColorSettings')) == 1 then 
         print("~~~~~~OCS: OmniCal_Color_Settings.lua initialized")
     end
+    --Отключаем подсказки СЕРВИС при запуске панели настроек цвета (Disable SERVICE tooltips on color settings panel init)
+    SKIN:Bang('!WriteKeyValue', 'Variables', 'ServisHiddenSuccess', '1', '#@#Variables_ColorSettings.ini')
+    SKIN:Bang('!WriteKeyValue', 'Variables', 'ServisHiddenErr', '1', '#@#Variables_ColorSettings.ini')
+    SKIN:Bang('!WriteKeyValue', 'Variables', 'ServisHidden', '1', '#@#Variables_ColorSettings.ini')
 end
 
 -- Функция для обработки ввода FontSizeEvent ~ (Function to handle FontSizeEvent input)

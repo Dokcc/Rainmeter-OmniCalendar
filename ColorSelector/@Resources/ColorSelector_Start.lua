@@ -3,9 +3,11 @@
 -- Включает функции для запуска, подтверждения, отмены и Live Preview
 
 function Initialize(variableName)
-    -- Проверяем, что передано имя переменной
+    -- Если функция вызвана без параметра (автоматически при загрузке скрипта), ничего не делаем
+    -- (If function called without parameter (automatically on script load), do nothing)
     if not variableName or variableName == "" then
-        print("ColorSelector_Start.lua Error: Variable name not provided")
+        -- Это нормально при загрузке скрипта Rainmeter (This is normal when Rainmeter loads the script)
+        -- print("ColorSelector_Start.lua Error: Variable name not provided")
         return
     end
 
