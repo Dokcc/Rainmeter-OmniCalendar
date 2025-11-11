@@ -13,6 +13,7 @@
 ## 🌟 Key Features
 
 - ✅ **Calendar Integration**: Google Calendar, iCloud Calendar, Yandex Calendar
+- 📊 **4 regular calendars + 1 aggregator**: Calendar 5 combines up to 5 sub-calendars with unified styling
 - 🎨 **Two Themes**: Light and Dark
 - 🌐 **Localization**: Russian and English interface
 - 🕒 **Day Modes**: Normal (00:00-00:00) and Psychological (customizable)
@@ -53,6 +54,7 @@
    - Go to `@Resources/`
    - Copy `Variables_URL.ini.example` and rename it to `Variables_URL.ini`
    - Open `Variables_URL.ini`, add URLs and names of your calendars (Google/iCloud/Yandex)
+   - **NEW**: Calendar 5 supports up to 5 sub-calendars (`iCalendar5_1` through `iCalendar5_5`) with unified styling
    - If necessary, change other settings through the interface.
 
 3. **Load the skin in Rainmeter**:
