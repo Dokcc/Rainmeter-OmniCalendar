@@ -10,7 +10,7 @@
 ;    (DO NOT commit Variables_URL.ini to Git! It's added to .gitignore)
 ; ————————————————————————————————————————————————————————————————————————————————
 
-; (NB!) Формат комментариев: Коментарий по-русски (Comment in English)
+; (NB!) Формат комментариев: Коментарий по-русски (Comment in english)
 ; UTF-16 LЕ with ВОМ
 
 [Variables]

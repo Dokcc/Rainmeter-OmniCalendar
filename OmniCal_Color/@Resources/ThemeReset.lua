@@ -6,7 +6,7 @@
 local DEFAULT_THEME_DARK = [[; Variables_Theme_Dark.ini
 ; UTF-8 without BOM (!!!) (UTF‑8 без BOM)
 ; Цвета темной темы (Colors of the dark theme)
-; (NB!) Формат комментариев: Коментарий по-русски (Comment in English)
+; (NB!) Формат комментариев: Коментарий по-русски (Comment in english)
 
 [Variables]
 
@@ -183,7 +183,7 @@ local DEFAULT_THEME_DARK = [[; Variables_Theme_Dark.ini
 local DEFAULT_THEME_LIGHT = [[; Variables_Theme_Light.ini
 ; UTF-8 without BOM (!!!) (UTF‑8 без BOM)
 ; Цвета светлой темы (Colors of the light theme)
-; (NB!) Формат комментариев: Коментарий по-русски (Comment in English)
+; (NB!) Формат комментариев: Коментарий по-русски (Comment in english)
 
 [Variables]
 
