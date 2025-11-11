@@ -14,8 +14,9 @@
 ; UTF-16 LЕ with ВОМ
 
 [Variables]
-;—— Поддерживаются Google и iCloud Календари (Supported Google and iCloud Calendars) ———————————————
-;—— URL календарей Google и iCloud (Google and iCloud Calendar URLs) ———————————————————————————————
+;—— Поддерживаются Google, iCloud и Yandex Календари (Supported Google, iCloud and Yandex Calendars) ———————————————
+    
+    ;—— URL календарей Google, iCloud, Yandex (Google, iCloud, Yandex Calendar URLs) ———————————————————————————————
 
     ; ПРИМЕР GOOGLE CALENDAR (GOOGLE CALENDAR EXAMPLE):
     ; iCalendar1=https://calendar.google.com/calendar/ical/YOUR_EMAIL/private-XXXXX/basic.ics
@@ -42,9 +43,20 @@
     iCalendar4_name = Calendar 4
     iCalendar4=URL_PLACEHOLDER_4
     
-    ; Календарь 5 (Calendar 5)
+    ; Календарь 5 - Агрегатор (Calendar 5 - Aggregator) ————————————————————————————————————————————
+    ; Этот календарь может объединять несколько подкалендарей в один
+    ; (This calendar can combine multiple subcalendars into one)
     iCalendar5_name = Calendar 5
-    iCalendar5=URL_PLACEHOLDER_5
+    
+    ; Подкалендари агрегатора iCalendar5 (Subcalendars of aggregator iCalendar5) ————————————————
+    ; Укажите URL подкалендарей, которые нужно объединить (Specify URLs of subcalendars to combine)
+    ; Оставьте пустым, если подкалендарь не используется (Leave empty if subcalendar is not used)
+    iCalendar5_1=URL_PLACEHOLDER_5_1
+    iCalendar5_2=URL_PLACEHOLDER_5_2
+    iCalendar5_3=URL_PLACEHOLDER_5_3
+    iCalendar5_4=
+    iCalendar5_5=
+    ;———————————————————————————————————————————————————————————————————————————————————————————————
 
     
     ; Активные календари (Active calendars)—————————————————————————————————————————————————————————
