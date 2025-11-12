@@ -2,7 +2,7 @@
 ;------------------------
 ;   INITIALIZE COLORS
 ;------------------------
-RGBA=222,207,69,100
+RGBA=150,150,150,100
 R=0
 G=0
 B=0
@@ -11,14 +11,14 @@ H=0
 S=0
 V=0
 HexColor=#DD6B3A
-ColorTooltip=Цвет фона События для 5-го календаря
+ColorTooltip=Цвет фона События для 4-го календаря
 
 ;------------------------
 ;     SKIN SETTINGS
 ;------------------------
 Version=1.0.1
 ColorThemePath=#ROOTCONFIGPATH#/@Resources/Variables_Theme_Dark.ini
-CSN=#Cal_5_Bg#
+CSN=#Cal_4_Bg#
 OldColor=0,150,255,255
 IBG=48,48,48,255
 IBO=110,110,110,255

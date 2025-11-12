@@ -39,9 +39,20 @@
     iCalendar3_name = Calendar 3
     iCalendar3=URL_PLACEHOLDER_3
     
-    ; Календарь 4 (Calendar 4)
+    ; Календарь 4 - Агрегатор (Calendar 4 - Aggregator) ————————————————————————————————————————————
+    ; Этот календарь может объединять несколько подкалендарей в один
+    ; (This calendar can combine multiple subcalendars into one)
     iCalendar4_name = Calendar 4
-    iCalendar4=URL_PLACEHOLDER_4
+    
+    ; Подкалендари агрегатора iCalendar4 (Subcalendars of aggregator iCalendar4) ————————————————
+    ; Укажите URL подкалендарей, которые нужно объединить (Specify URLs of subcalendars to combine)
+    ; Оставьте пустым, если подкалендарь не используется (Leave empty if subcalendar is not used)
+    iCalendar4_1=URL_PLACEHOLDER_4_1
+    iCalendar4_2=URL_PLACEHOLDER_4_2
+    iCalendar4_3=URL_PLACEHOLDER_4_3
+    iCalendar4_4=
+    iCalendar4_5=
+    ;———————————————————————————————————————————————————————————————————————————————————————————————
     
     ; Календарь 5 - Агрегатор (Calendar 5 - Aggregator) ————————————————————————————————————————————
     ; Этот календарь может объединять несколько подкалендарей в один
